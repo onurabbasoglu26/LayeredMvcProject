@@ -1,0 +1,206 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Themes/AdminLayout/css/adminlte.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="/Heading/Index/" class="brand-link text-center">
+                <span class="brand-text font-weight-light">Admin Panel</span>
+            </a>
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="~/Themes/pictures/admin-logo.png" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Admin</a>
+                    </div>
+                </div>
+
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        @if (User.IsInRole("B"))
+                        {
+                            <li class="nav-item has-treeview">
+                                <a href="/Category/Index" class="nav-link">
+                                    <i class="nav-icon fa-solid fa fa-calendar-check-o"></i>
+                                    <p>
+                                        Kategoriler
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a href="/Heading/Index" class="nav-link">
+                                <i class="nav-icon fa fa-align-justify"></i>
+                                <p>
+                                    Başlıklar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Content/GetAllContent" class="nav-link">
+                                <i class="nav-icon fa fa-file-text-o"></i>
+                                <p>
+                                    Yazılar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Writer/Index" class="nav-link">
+                                <i class="nav-icon fa fa-child"></i>
+                                <p>
+                                    Yazarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Grafikler
+                                    <i class="right fa fa-pie-chart"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Chart/Index/" class="nav-link">
+                                        <i class="fa fa-area-chart nav-icon"></i>
+                                        <p>Grafik 1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Chart/Index/" class="nav-link">
+                                        <i class="fa fa-bar-chart nav-icon"></i>
+                                        <p>Grafik 2</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Chart/Index/" class="nav-link">
+                                        <i class="fa fa-line-chart nav-icon"></i>
+                                        <p>Grafik 3</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Heading/HeadingReport/" class="nav-link">
+                                <i class="nav-icon fa fa-check-square-o"></i>
+                                <p>
+                                    Raporlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/About/Index" class="nav-link">
+                                <i class="nav-icon fa fa-drivers-license-o"></i>
+                                <p>
+                                    Hakkımızda
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Contact/Index" class="nav-link">
+                                <i class="nav-icon fa fa-envelope-o"></i>
+                                <p>
+                                    İletişim & Mesajlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/MySkill/Index" class="nav-link">
+                                <i class="nav-icon fa fa-credit-card"></i>
+                                <p>
+                                    Yetenek Kartım
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Authorization/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-exclamation-triangle"></i>
+                                <p>
+                                    Yetkilendirmeler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Galery/Index" class="nav-link">
+                                <i class="nav-icon fa fa-file-picture-o"></i>
+                                <p>
+                                    Galeri
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/SweetAlert/Index/" class="nav-link">
+                                <i class="nav-icon fa fa-gear"></i>
+                                <p>
+                                    Sweet Alert
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/ErrorPage/Page404" class="nav-link">
+                                <i class="nav-icon fa fa-spinner"></i>
+                                <p>
+                                    Hata Sayfaları
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Home/HomePage/" class="nav-link">
+                                <i class="nav-icon fa fa-external-link"></i>
+                                <p>
+                                    Siteye Git
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Login/LogOut/" class="nav-link">
+                                <i class="nav-icon fa fa-frown-o"></i>
+                                <p>
+                                    Çıkış yap
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content p-3">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- AdminLTE -->
+    <script src="~/Themes/AdminLayout/js/adminlte.js"></script>
+
+</body>
+</html>
